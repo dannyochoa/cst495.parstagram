@@ -10,6 +10,7 @@
 		220BC077222494C00018F493 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220BC076222494C00018F493 /* LoginViewController.swift */; };
 		220BC079222494D90018F493 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220BC078222494D90018F493 /* FeedViewController.swift */; };
 		220BC07B22249EF20018F493 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220BC07A22249EF20018F493 /* CameraViewController.swift */; };
+		220BC07D2224ACC90018F493 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220BC07C2224ACC90018F493 /* PostCell.swift */; };
 		22F0E47222248D6600D057B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F0E47122248D6600D057B4 /* AppDelegate.swift */; };
 		22F0E47722248D6600D057B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F0E47522248D6600D057B4 /* Main.storyboard */; };
 		22F0E47922248D6800D057B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F0E47822248D6800D057B4 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		220BC076222494C00018F493 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		220BC078222494D90018F493 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		220BC07A22249EF20018F493 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		220BC07C2224ACC90018F493 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		22F0E46E22248D6600D057B4 /* parstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F0E47122248D6600D057B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22F0E47622248D6600D057B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				220BC076222494C00018F493 /* LoginViewController.swift */,
 				220BC078222494D90018F493 /* FeedViewController.swift */,
 				220BC07A22249EF20018F493 /* CameraViewController.swift */,
+				220BC07C2224ACC90018F493 /* PostCell.swift */,
 			);
 			path = parstagram;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				220BC07B22249EF20018F493 /* CameraViewController.swift in Sources */,
 				220BC079222494D90018F493 /* FeedViewController.swift in Sources */,
 				22F0E47222248D6600D057B4 /* AppDelegate.swift in Sources */,
+				220BC07D2224ACC90018F493 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

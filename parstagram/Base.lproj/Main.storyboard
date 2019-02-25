@@ -91,6 +91,64 @@
                     <view key="view" contentMode="scaleToFill" id="VSk-BF-GPt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mc7-Df-LU5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="387" id="5yu-p9-Hym" customClass="PostCell" customModule="parstagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="387"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5yu-p9-Hym" id="dLw-cO-T0v">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="386.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ODa-E2-8VV">
+                                                    <rect key="frame" x="8" y="33" width="359" height="304"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ODa-E2-8VV" secondAttribute="height" multiplier="359:304" id="YCd-rz-TQ8"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogz-k1-Fdf">
+                                                    <rect key="frame" x="8" y="8" width="359" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="caption for picture" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDQ-M2-lRb">
+                                                    <rect key="frame" x="8" y="345" width="359" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="woN-0M-9kV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="ODa-E2-8VV" secondAttribute="trailing" constant="8" id="0bh-8p-aFr"/>
+                                                <constraint firstItem="Ogz-k1-Fdf" firstAttribute="leading" secondItem="dLw-cO-T0v" secondAttribute="leading" constant="8" id="6cw-al-W3U"/>
+                                                <constraint firstItem="mDQ-M2-lRb" firstAttribute="leading" secondItem="dLw-cO-T0v" secondAttribute="leading" constant="8" id="91A-XQ-fUL"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="mDQ-M2-lRb" secondAttribute="bottom" constant="6" id="97M-1B-7UM"/>
+                                                <constraint firstItem="ODa-E2-8VV" firstAttribute="top" secondItem="Ogz-k1-Fdf" secondAttribute="bottom" constant="4" id="JCO-zl-r73"/>
+                                                <constraint firstAttribute="trailing" secondItem="mDQ-M2-lRb" secondAttribute="trailing" constant="8" id="KmI-Hx-bPM"/>
+                                                <constraint firstItem="mDQ-M2-lRb" firstAttribute="top" secondItem="ODa-E2-8VV" secondAttribute="bottom" constant="8" id="TaY-jM-EP2"/>
+                                                <constraint firstItem="ODa-E2-8VV" firstAttribute="leading" secondItem="dLw-cO-T0v" secondAttribute="leading" constant="8" id="Wnt-kL-jY4"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ogz-k1-Fdf" secondAttribute="trailing" constant="8" id="hyr-ll-2up"/>
+                                                <constraint firstItem="Ogz-k1-Fdf" firstAttribute="top" secondItem="dLw-cO-T0v" secondAttribute="top" constant="8" id="izh-3W-SQg"/>
+                                                <constraint firstItem="mDQ-M2-lRb" firstAttribute="top" secondItem="ODa-E2-8VV" secondAttribute="bottom" constant="8" id="yys-0V-WPo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="captionLabel" destination="mDQ-M2-lRb" id="aaq-lK-Wun"/>
+                                            <outlet property="photoVoew" destination="ODa-E2-8VV" id="niB-P3-fvt"/>
+                                            <outlet property="usernameLabel" destination="Ogz-k1-Fdf" id="BHp-7W-Icz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="gqZ-Nj-bgm"/>
                     </view>
@@ -101,10 +159,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="mc7-Df-LU5" id="tKq-8g-Wcu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QjC-hN-L6R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1495" y="99"/>
+            <point key="canvasLocation" x="1493.5999999999999" y="98.50074962518741"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="t0R-8D-bQk">
