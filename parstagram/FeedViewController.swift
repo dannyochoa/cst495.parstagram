@@ -14,6 +14,8 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
 
     @IBOutlet weak var tableView: UITableView!
     
+    let myRefreshControl = UIRefreshControl()
+    
     var posts = [PFObject]()
     
     override func viewDidLoad() {
@@ -21,7 +23,10 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
 
         tableView.delegate = self
         tableView.dataSource = self
-        // Do any additional setup after loading the view.
+        
+        myRefreshControl.addTarget(self, action: #selector(viewDidAppear), for: .valueChanged)
+        tableView.refreshControl = myRefreshControl
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,6 +40,7 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
             if posts != nil {
                 self.posts = posts!
                 self.tableView.reloadData()
+                self.myRefreshControl.endRefreshing()
             } else {
                 
             }
