@@ -16,6 +16,8 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     let myRefreshControl = UIRefreshControl()
     
+    var numberOfPost: Int!
+    
     var posts = [PFObject]()
     
     override func viewDidLoad() {
@@ -29,12 +31,11 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
 
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    func loadPosts(_ amount: Int) {
         let query = PFQuery(className:"Posts")
         query.includeKey("author")
-        query.limit = 20
+        
+        query.limit = amount
         
         query.findObjectsInBackground{ (posts, error) in
             if posts != nil {
@@ -42,9 +43,33 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
                 self.tableView.reloadData()
                 self.myRefreshControl.endRefreshing()
             } else {
-                
+                print("Error: \(String(describing: error))")
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+          numberOfPost = 5
+//        let query = PFQuery(className:"Posts")
+//        query.includeKey("author")
+//        query.limit = numberOfPost
+//
+//        query.findObjectsInBackground{ (posts, error) in
+//            if posts != nil {
+//                self.posts = posts!
+//                self.tableView.reloadData()
+//                self.myRefreshControl.endRefreshing()
+//            } else {
+//
+//            }
+//        }
+        loadPosts(numberOfPost)
+    }
+    
+    func loadMorePosts(){
+        numberOfPost = numberOfPost + 5
+        loadPosts(numberOfPost)
     }
     
     @IBAction func onLogoutButton(_ sender: Any) {
@@ -73,17 +98,10 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 3 == posts.count {
+            loadMorePosts()
+        }
     }
-    */
 
 }
