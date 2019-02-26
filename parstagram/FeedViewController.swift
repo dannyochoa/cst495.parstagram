@@ -41,6 +41,11 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
         }
     }
     
+    @IBAction func onLogoutButton(_ sender: Any) {
+        PFUser.logOut()
+        dismiss(animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
@@ -48,7 +53,7 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
         
-        let post = posts[indexPath.row]
+        let post = posts[(posts.count - 1) - indexPath.row]
         let user = post["author"] as! PFUser
         cell.usernameLabel.text = user.username
         
