@@ -50,7 +50,7 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-          numberOfPost = 5
+          numberOfPost = 10
 //        let query = PFQuery(className:"Posts")
 //        query.includeKey("author")
 //        query.limit = numberOfPost
@@ -68,12 +68,13 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
     }
     
     func loadMorePosts(){
-        numberOfPost = numberOfPost + 5
+        numberOfPost = numberOfPost + 10
         loadPosts(numberOfPost)
     }
     
     @IBAction func onLogoutButton(_ sender: Any) {
         PFUser.logOut()
+        UserDefaults.standard.set(false, forKey: "userLoggedIn")
         dismiss(animated: true, completion: nil)
     }
     
@@ -99,7 +100,7 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row + 3 == posts.count {
+        if indexPath.row + 1 == posts.count {
             loadMorePosts()
         }
     }
