@@ -65,6 +65,7 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Paf-hL-xay" firstAttribute="top" secondItem="1Qk-p6-NO5" secondAttribute="bottom" constant="40" id="5PV-7K-hmb"/>
                             <constraint firstItem="LdP-gZ-BgX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="AV7-z6-ZEa"/>
@@ -88,6 +89,9 @@
                             <constraint firstItem="Wma-ki-nR7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="wrx-FB-V3l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="HSP-bJ-52b" appends="YES" id="HBA-Fh-Aog"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="passwordField" destination="1Qk-p6-NO5" id="l5B-kW-omj"/>
@@ -96,6 +100,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HSP-bJ-52b">
+                    <connections>
+                        <action selector="unSelectKeyBoard:" destination="BYZ-38-t0r" id="wxH-3b-i6Y"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="8.8000000000000007" y="99.400299850074973"/>
         </scene>
