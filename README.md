@@ -41,7 +41,7 @@ The following **required** functionality is completed:
 - [ X] User stays logged in across restarts. (1pt)
 - [ X] User can log out. (1pt)
 - [ X] User can view comments on a post. (3pts)
-- [ ] User can add a new comment. (5pts)
+- [ X] User can add a new comment. (5pts)
 
 The following **bonus** features are implemented:
 
