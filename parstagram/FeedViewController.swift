@@ -69,12 +69,13 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
 
         selectedPost.saveInBackground{ (success, error) in
             if success {
-                    print("Comment saved")
+                    print("comment saved")
             } else {
                 print("Error saving comment")
             }
 
         }
+        tableView.reloadData()
         //clear and dismiss the input bar
         commentBar.inputTextView.text = nil
         showCommentBar = false
@@ -174,8 +175,10 @@ class FeedViewController: UIViewController , UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = posts[indexPath.row]
         let comments = (post["comments"] as? [PFObject]) ?? []
-        
-        if indexPath.row == comments.count + 1 {
+        print("selected ")
+        print(indexPath.row)
+        print(comments.count)
+        if (indexPath.row == comments.count + 1) {
             print("pressed")
             showCommentBar = true
             becomeFirstResponder()
